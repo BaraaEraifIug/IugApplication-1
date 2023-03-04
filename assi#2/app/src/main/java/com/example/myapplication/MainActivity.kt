@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             val names = name.text.toString()
             val phoneNumbers = phoneNumber.text.toString()
             val addresses = address.text.toString()
-            val objectModel = ContactData("Name: $names", "phoneNumbers: $phoneNumbers", "address: $addresses");
+            val objectModel = ContactData(names, phoneNumbers, addresses);
             this.addContactToFireStore(objectModel);
 
             contactList.add(objectModel)
@@ -100,6 +100,7 @@ class MainActivity : AppCompatActivity() {
         db.collection(this.CONTACT_COLLECTION)
             .add(document)
             .addOnSuccessListener { documentReference ->
+                documentReference.set(document)
                 Log.d("TAG", "DocumentSnapshot added with ID: ${documentReference.id}")
             }
             .addOnFailureListener { e ->
