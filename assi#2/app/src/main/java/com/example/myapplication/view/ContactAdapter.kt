@@ -56,17 +56,6 @@ class ContactAdapter(val c: Context, val contactList: ArrayList<ContactData>) :
             }
         }
 
-//        private fun popupMenus(v: View) {
-//            val position = contactList[adapterPosition]
-//            val popupMenus = PopupMenu(c, v)
-//
-//            popupMenus.show()
-//            val popup = PopupMenu::class.java.getDeclaredField("mPopup")
-//            popup.isAccessible = true
-//            val menu = popup.get(popupMenus)
-//            menu.javaClass.getDeclaredMethod("setForceShowIcon", Boolean::class.java)
-//                .invoke(menu, true)
-//        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
